@@ -15,12 +15,22 @@ function FormValidation() {
     if (userName == "" && password == "") {
       setUserNameError(true);
       setPasswordError(true);
-    } else if (userName == "") {
-      setUserNameError(true);
-    } else if (password == "") {
-      setPasswordError(true);
     } else {
-      console.log("hello");
+      if (userName == "") {
+        setUserNameError(true);
+      } else {
+        setUserNameError(false);
+      }
+
+      if (password == "") {
+        setPasswordError(true);
+      } else {
+        setPasswordError(false);
+      }
+
+      if (userName !== "" && password !== "") {
+        console.log(userName, password);
+      }
     }
     e.preventDefault();
   }
